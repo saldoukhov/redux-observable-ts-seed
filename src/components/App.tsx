@@ -12,11 +12,11 @@ import Login from "./Login.connect";
 import {withStyles} from "@material-ui/styles";
 
 export interface AppProps {
-  loading: boolean;
-  classes: any;
+    classes: any;
+    loading: boolean;
 }
 
-const appTheme = createMuiTheme({
+export const appTheme = createMuiTheme({
     palette: {
         primary: blueGrey
     }
@@ -35,29 +35,29 @@ const styles = {
 };
 
 class App extends React.Component<AppProps, {}> {
-  render() {
-    const { classes } = this.props;
-    return (
-        <ThemeProvider theme={appTheme}>
-            <div className="app">
-                <AppBar position="static">
-                    <Toolbar>
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                            <MenuIcon/>
-                        </IconButton>
-                        <Typography variant="h6" className={classes.title}>
-                            Client Tool
-                        </Typography>
-                        <Button color="inherit">Login</Button>
-                    </Toolbar>
-                </AppBar>
-                <div className="main">
-                    <Login/>
+    render() {
+        const {classes} = this.props;
+        return (
+            <ThemeProvider theme={appTheme}>
+                <div className="app">
+                    <AppBar position="static">
+                        <Toolbar>
+                            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                                <MenuIcon/>
+                            </IconButton>
+                            <Typography variant="h6" className={classes.title}>
+                                Client Tool
+                            </Typography>
+                            <Button color="inherit">Login</Button>
+                        </Toolbar>
+                    </AppBar>
+                    <div className="main">
+                        <Login/>
+                    </div>
                 </div>
-            </div>
-        </ThemeProvider>
-    );
-  }
+            </ThemeProvider>
+        );
+    }
 }
 
 export default withStyles(styles)(App)
