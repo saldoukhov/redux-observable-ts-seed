@@ -16,7 +16,7 @@ interface OwnProps {
 const mapStateToProps = (state: RootState) => ({});
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>, props: OwnProps) => bindActionCreators({
-    performLogin: (user: string, password: string) => actions.loginAction(user, password),
+    performLogin: (user: string, password: string) => actions.loginAction({user, password}),
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

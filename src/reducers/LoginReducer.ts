@@ -23,7 +23,7 @@ export const loginReducer = (state: LoginState = initialState, action: Action): 
 
     case getType(actions.loggedInAction):
       return {
-        ...state, sessionToken: action.payload.sessionToken
+        ...state, sessionToken: action.payload
       };
 
     default:
